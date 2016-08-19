@@ -296,7 +296,7 @@
       
         
           
-            <p>java pom文件里添加<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;!-- 文件拷贝时的编码 --&gt;</div><div class="line">&lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;</div><div class="line">&lt;project.reporting.outputEncoding&gt;UTF-8&lt;/project.reporting.outputEncoding&gt;</div><div class="line">&lt;!-- 编译时的编码 --&gt;</div><div class="line">&lt;maven.compiler.encoding&gt;UTF-8&lt;/maven.compiler.encoding&gt;</div></pre></td></tr></table></figure></p>
+            <p>sonar扫描java项目时中文会出现乱码,需要在pom文件里properties添加如下配置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;!-- 文件拷贝时的编码 --&gt;</div><div class="line">&lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;</div><div class="line">&lt;project.reporting.outputEncoding&gt;UTF-8&lt;/project.reporting.outputEncoding&gt;</div><div class="line">&lt;!-- 编译时的编码 --&gt;</div><div class="line">&lt;maven.compiler.encoding&gt;UTF-8&lt;/maven.compiler.encoding&gt;</div></pre></td></tr></table></figure></p>
 
           
         
