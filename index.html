@@ -398,17 +398,14 @@
 
       
         
-          
-            <ol>
+          <ol>
 <li>导出数据库 dbexport 库名</li>
-<li>把导出的数据库打成tar包，放到需要搭建新数据库环境的服务器上</li>
-<li>将dbexport.out的第一行{ DATABASE XXXXXXX  delimiter | }中的XXXXXXX  改成新建数据库的名称，将XXXXXXXX.exp目录中的XXXXXXXX改为新建数据库的名称，进入XXXXXXXX.exp目录中找到XXXXXXXX.sql，将XXXXXXXX.sql中的XXXXXXXX改为新建数据库名称，并将第一行的 { DATABASE XXXXXXX  delimiter | }的XXXXXXXX改为新建数据库的名称。</li>
-<li>进入XXXXXXXX.exp目录，找到XXXXXXXX.sql文件，把文件开头的grant dba to 的用户名，都替换为改为搭建新服务器的登陆用户名，全文件替换，把不存的删掉。<br>全替换命令%s/原名/现名/g。</li>
-<li>将无用的unl清空<br>搜索unl对应的表在XXXXXXXX.sql中的行数命令 grep -i -n <strong><strong>.unl XXXXXXXX.sql<br>将</strong></strong>.unl在XXXXXXXX.sql对应的表的row改为0。</li>
-<li>将库导入到需要搭建数据库服务器上<br>查看空间onmonitor<br>将库导入 dbimport 新建库名 -d 要搭建的空间 -l buffered</li>
-</ol>
-
-          
+<li>把导出的数据库打成tar包，放到需要搭建新数据库环境的服务器上
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/08/19/informix数据库迁移/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
