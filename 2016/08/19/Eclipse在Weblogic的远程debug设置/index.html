@@ -84,16 +84,16 @@
 
 
 
-<meta name="description" content="Eclipse + Weblogic的debug设置在eclipse里面设置debug-&amp;gt;Remote Java Application -&amp;gt; Project: yourproject-&amp;gt;Connection type: Standard-&amp;gt;Host:localhost-&amp;gt;port:8787(可以自己定义,不要与其它端口冲突就行了)">
+<meta name="description" content="Eclipse + Weblogic的远程debug设置在eclipse里面设置debug-&amp;gt;Remote Java Application -&amp;gt; Project: yourproject-&amp;gt;Connection type: Standard-&amp;gt;Host:localhost-&amp;gt;port:8787(可以自己定义,不要与其它端口冲突就行了)">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Eclipse+Weblogic的debug设置">
-<meta property="og:url" content="http://yoursite.com/2016/08/19/Eclipse在Weblogic的debug设置/index.html">
+<meta property="og:title" content="Eclipse+Weblogic的远程debug设置">
+<meta property="og:url" content="http://yoursite.com/2016/08/19/Eclipse在Weblogic的远程debug设置/index.html">
 <meta property="og:site_name" content="leaoway">
-<meta property="og:description" content="Eclipse + Weblogic的debug设置在eclipse里面设置debug-&amp;gt;Remote Java Application -&amp;gt; Project: yourproject-&amp;gt;Connection type: Standard-&amp;gt;Host:localhost-&amp;gt;port:8787(可以自己定义,不要与其它端口冲突就行了)">
-<meta property="og:updated_time" content="2016-08-19T13:42:13.000Z">
+<meta property="og:description" content="Eclipse + Weblogic的远程debug设置在eclipse里面设置debug-&amp;gt;Remote Java Application -&amp;gt; Project: yourproject-&amp;gt;Connection type: Standard-&amp;gt;Host:localhost-&amp;gt;port:8787(可以自己定义,不要与其它端口冲突就行了)">
+<meta property="og:updated_time" content="2016-08-19T13:57:48.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Eclipse+Weblogic的debug设置">
-<meta name="twitter:description" content="Eclipse + Weblogic的debug设置在eclipse里面设置debug-&amp;gt;Remote Java Application -&amp;gt; Project: yourproject-&amp;gt;Connection type: Standard-&amp;gt;Host:localhost-&amp;gt;port:8787(可以自己定义,不要与其它端口冲突就行了)">
+<meta name="twitter:title" content="Eclipse+Weblogic的远程debug设置">
+<meta name="twitter:description" content="Eclipse + Weblogic的远程debug设置在eclipse里面设置debug-&amp;gt;Remote Java Application -&amp;gt; Project: yourproject-&amp;gt;Connection type: Standard-&amp;gt;Host:localhost-&amp;gt;port:8787(可以自己定义,不要与其它端口冲突就行了)">
 
 
 
@@ -114,9 +114,9 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/08/19/Eclipse在Weblogic的debug设置/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/08/19/Eclipse在Weblogic的远程debug设置/"/>
 
-  <title> Eclipse+Weblogic的debug设置 | leaoway </title>
+  <title> Eclipse+Weblogic的远程debug设置 | leaoway </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -246,7 +246,7 @@
             
             
               
-                Eclipse+Weblogic的debug设置
+                Eclipse+Weblogic的远程debug设置
               
             
           </h1>
@@ -269,8 +269,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/08/19/Eclipse在Weblogic的debug设置/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/19/Eclipse在Weblogic的debug设置/" itemprop="commentsCount"></span>
+                <a href="/2016/08/19/Eclipse在Weblogic的远程debug设置/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/19/Eclipse在Weblogic的远程debug设置/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -293,7 +293,7 @@
       
 
       
-        <p>Eclipse + Weblogic的debug设置<br>在eclipse里面设置debug-&gt;Remote Java Application -&gt; Project: yourproject-&gt;Connection type: Standard-&gt;Host:localhost-&gt;port:8787(可以自己定义,不要与其它端口冲突就行了)<br><a id="more"></a></p>
+        <p>Eclipse + Weblogic的远程debug设置<br>在eclipse里面设置debug-&gt;Remote Java Application -&gt; Project: yourproject-&gt;Connection type: Standard-&gt;Host:localhost-&gt;port:8787(可以自己定义,不要与其它端口冲突就行了)<br><a id="more"></a></p>
 <p>在staticWeblogic.cmd中加入下面的设置:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">set DEBUG_OPTS=-Xdebug -Xrunjdwp:transport=dt_socket,address=8787,server=y,suspend=n</div><div class="line">%JAVA_HOME%\bin\java %JAVA_VM% %MEM_ARGS% %JAVA_OPTIONS% %DEBUG_OPTS% -Dweblogic.Name=%SERVER_NAME% -Dweblogic.ProductionModeEnabled=%PRODUCTION_MODE% -Djava.security.policy=&quot;%WL_HOME%\server\lib\weblogic.policy&quot; weblogic.Server</div></pre></td></tr></table></figure></p>
 <p>配置不要只写在echo里</p>
 
@@ -353,8 +353,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/08/19/Eclipse在Weblogic的debug设置/"
-           data-title="Eclipse+Weblogic的debug设置" data-url="http://yoursite.com/2016/08/19/Eclipse在Weblogic的debug设置/">
+      <div class="ds-thread" data-thread-key="2016/08/19/Eclipse在Weblogic的远程debug设置/"
+           data-title="Eclipse+Weblogic的远程debug设置" data-url="http://yoursite.com/2016/08/19/Eclipse在Weblogic的远程debug设置/">
       </div>
     
   </div>
