@@ -85,18 +85,18 @@
 
 
 <meta name="description" content="jdk1.7引入了资源自动关闭的接口AutoCloseable。一些资源也实现了该接口，如preparedStatement、Connection、InputStream、outputStream等等资源接口。在使用的时候只需要把资源在try块中用小括号括起来就可以了。
-123456789101112String sql = &quot;select 1 from dual&quot;;try (PreparedSt">
+123456789String sql = &quot;select 1 from dual&quot;;try (PreparedStatemen">
 <meta property="og:type" content="article">
 <meta property="og:title" content="AutoCloseable接口的使用">
 <meta property="og:url" content="http://yoursite.com/2016/08/19/AutoCloseable接口的使用/index.html">
 <meta property="og:site_name" content="leaoway">
 <meta property="og:description" content="jdk1.7引入了资源自动关闭的接口AutoCloseable。一些资源也实现了该接口，如preparedStatement、Connection、InputStream、outputStream等等资源接口。在使用的时候只需要把资源在try块中用小括号括起来就可以了。
-123456789101112String sql = &quot;select 1 from dual&quot;;try (PreparedSt">
-<meta property="og:updated_time" content="2016-08-19T14:15:38.000Z">
+123456789String sql = &quot;select 1 from dual&quot;;try (PreparedStatemen">
+<meta property="og:updated_time" content="2016-08-19T14:18:30.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="AutoCloseable接口的使用">
 <meta name="twitter:description" content="jdk1.7引入了资源自动关闭的接口AutoCloseable。一些资源也实现了该接口，如preparedStatement、Connection、InputStream、outputStream等等资源接口。在使用的时候只需要把资源在try块中用小括号括起来就可以了。
-123456789101112String sql = &quot;select 1 from dual&quot;;try (PreparedSt">
+123456789String sql = &quot;select 1 from dual&quot;;try (PreparedStatemen">
 
 
 
@@ -297,7 +297,7 @@
 
       
         <p>jdk1.7引入了资源自动关闭的接口AutoCloseable。一些资源也实现了该接口，如preparedStatement、Connection、InputStream、outputStream等等资源接口。在使用的时候只需要把资源在try块中用小括号括起来就可以了。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">String sql = <span class="string">"select 1 from dual"</span>;</div><div class="line"><span class="keyword">try</span> (PreparedStatement pstmt = toConn.prepareStatement(sql);</div><div class="line">    PreparedStatement pstmt1 = fromConn.prepareStatement(sql);</div><div class="line">    ResultSet rs = pstmt.executeQuery();</div><div class="line">    ResultSet rs1 = pstmt1.executeQuery()) &#123;</div><div class="line">  <span class="keyword">if</span> (rs.next() || rs1.next()) &#123;</div><div class="line">  &#125;</div><div class="line">&#125; <span class="keyword">catch</span> (SQLException e) &#123;</div><div class="line">  log.error(<span class="string">"mysql链接发生异常！"</span>, e);</div><div class="line">  e.printStackTrace();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">String sql = <span class="string">"select 1 from dual"</span>;</div><div class="line"><span class="keyword">try</span> (PreparedStatement pstmt = toConn.prepareStatement(sql);</div><div class="line">    ResultSet rs = pstmt.executeQuery();) &#123;</div><div class="line">    <span class="keyword">if</span> (rs.next()) &#123;</div><div class="line">  &#125;</div><div class="line">&#125; <span class="keyword">catch</span> (SQLException e) &#123;</div><div class="line">    log.error(<span class="string">"mysql链接发生异常！"</span>, e);</div><div class="line">    e.printStackTrace();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
       
     </div>
