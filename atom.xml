@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>伟</title>
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2016-08-19T14:27:39.000Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>tanjianwei</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>JDK7 AutoCloseable接口的使用</title>
+    <link href="http://yoursite.com/2016/08/19/AutoCloseable%E6%8E%A5%E5%8F%A3%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
+    <id>http://yoursite.com/2016/08/19/AutoCloseable接口的使用/</id>
+    <published>2016-08-19T14:12:40.000Z</published>
+    <updated>2016-08-19T14:27:39.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>jdk1.7引入了资源自动关闭的接口<strong>AutoCloseable</strong>。一些资源也实现了该接口，如preparedStatement、Connection、InputStream、outputStream等等资源接口。在使用的时候只需要把资源在try块中用小括号括起来就可以了。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">String sql = <span class="string">"select 1 from dual"</span>;</div><div class="line"><span class="keyword">try</span> (PreparedStatement pstmt = toConn.prepareStatement(sql);</div><div class="line">    ResultSet rs = pstmt.executeQuery();) &#123;</div><div class="line">    <span class="keyword">if</span> (rs.next()) &#123;</div><div class="line">    &#125;</div><div class="line">&#125; <span class="keyword">catch</span> (SQLException e) &#123;</div><div class="line">    log.error(<span class="string">"查询出错"</span>, e);</div><div class="line">    e.printStackTrace();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;jdk1.7引入了资源自动关闭的接口&lt;strong&gt;AutoCloseable&lt;/strong&gt;。一些资源也实现了该接口，如preparedStatement、Connection、InputStream、outputStream等等资源接口。在使用的时候只需要把资源在tr
+    
+    </summary>
+    
+    
+      <category term="AutoCloseable" scheme="http://yoursite.com/tags/AutoCloseable/"/>
+    
+      <category term="java" scheme="http://yoursite.com/tags/java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>gitolite注意事项</title>
+    <link href="http://yoursite.com/2016/08/19/gitolite%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/"/>
+    <id>http://yoursite.com/2016/08/19/gitolite注意事项/</id>
+    <published>2016-08-19T14:04:38.000Z</published>
+    <updated>2016-08-19T14:05:37.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>ssh的authorized_keys需要由gitolite生成才有效</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;ssh的authorized_keys需要由gitolite生成才有效&lt;/p&gt;
+
+    
+    </summary>
+    
+    
+      <category term="gitolite" scheme="http://yoursite.com/tags/gitolite/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Eclipse+Weblogic的远程debug设置</title>
+    <link href="http://yoursite.com/2016/08/19/Eclipse%E5%9C%A8Weblogic%E7%9A%84%E8%BF%9C%E7%A8%8Bdebug%E8%AE%BE%E7%BD%AE/"/>
+    <id>http://yoursite.com/2016/08/19/Eclipse在Weblogic的远程debug设置/</id>
+    <published>2016-08-19T13:22:17.000Z</published>
+    <updated>2016-08-19T14:01:36.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>Eclipse + Weblogic的远程debug设置<br>在eclipse里面设置debug-&gt;Remote Java Application -&gt; Project: yourproject-&gt;Connection type: Standard-&gt;Host:localhost-&gt;port:8787(可以自己定义,不要与其它端口冲突就行了)<br><a id="more"></a></p>
+<p>在staticWeblogic.cmd中加入下面的设置:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">set DEBUG_OPTS=-Xdebug -Xrunjdwp:transport=dt_socket,address=8787,server=y,suspend=n</div><div class="line">%JAVA_HOME%\bin\java %JAVA_VM% %MEM_ARGS% %JAVA_OPTIONS% %DEBUG_OPTS% -Dweblogic.Name=%SERVER_NAME% -Dweblogic.ProductionModeEnabled=%PRODUCTION_MODE% -Djava.security.policy=&quot;%WL_HOME%\server\lib\weblogic.policy&quot; weblogic.Server</div></pre></td></tr></table></figure></p>
+<p>配置不要只写在echo里</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Eclipse + Weblogic的远程debug设置&lt;br&gt;在eclipse里面设置debug-&amp;gt;Remote Java Application -&amp;gt; Project: yourproject-&amp;gt;Connection type: Standard-&amp;gt;Host:localhost-&amp;gt;port:8787(可以自己定义,不要与其它端口冲突就行了)&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="eclipse" scheme="http://yoursite.com/tags/eclipse/"/>
+    
+      <category term="远程" scheme="http://yoursite.com/tags/%E8%BF%9C%E7%A8%8B/"/>
+    
+      <category term="debug" scheme="http://yoursite.com/tags/debug/"/>
+    
+      <category term="weblogic" scheme="http://yoursite.com/tags/weblogic/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>informix数据库迁移</title>
+    <link href="http://yoursite.com/2016/08/19/informix%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%81%E7%A7%BB/"/>
+    <id>http://yoursite.com/2016/08/19/informix数据库迁移/</id>
+    <published>2016-08-19T10:20:02.000Z</published>
+    <updated>2016-08-19T13:44:13.000Z</updated>
+    
+    <content type="html"><![CDATA[<ol>
+<li>导出数据库 dbexport 库名</li>
+<li>把导出的数据库打成tar包，放到需要搭建新数据库环境的服务器上<a id="more"></a></li>
+<li>将dbexport.out的第一行<code>{ DATABASE XXXXXXX  delimiter | }</code>中的XXXXXXX  改成新建数据库的名称，将XXXXXXXX.exp目录中的XXXXXXXX改为新建数据库的名称，进入XXXXXXXX.exp目录中找到XXXXXXXX.sql，将XXXXXXXX.sql中的XXXXXXXX改为新建数据库名称，并将第一行的 <code>{ DATABASE XXXXXXX  delimiter | }</code>的XXXXXXXX改为新建数据库的名称。</li>
+<li>进入XXXXXXXX.exp目录，找到XXXXXXXX.sql文件，把文件开头的grant dba to 的用户名，都替换为改为搭建新服务器的登陆用户名，全文件替换，把不存的删掉。<br>全替换命令%s/原名/现名/g。</li>
+<li>将无用的unl清空<br>搜索unl对应的表在XXXXXXXX.sql中的行数命令 grep -i -n <strong><strong>.unl XXXXXXXX.sql<br>将</strong></strong>.unl在XXXXXXXX.sql对应的表的row改为0。</li>
+<li>将库导入到需要搭建数据库服务器上<br>查看空间onmonitor<br>将库导入 dbimport 新建库名 -d 要搭建的空间 -l buffered</li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;ol&gt;
+&lt;li&gt;导出数据库 dbexport 库名&lt;/li&gt;
+&lt;li&gt;把导出的数据库打成tar包，放到需要搭建新数据库环境的服务器上
+    
+    </summary>
+    
+    
+      <category term="informix" scheme="http://yoursite.com/tags/informix/"/>
+    
+      <category term="数据库迁移" scheme="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%81%E7%A7%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>sonar检测java项目乱码</title>
+    <link href="http://yoursite.com/2016/08/19/sonar%E6%A3%80%E6%B5%8Bjava%E9%A1%B9%E7%9B%AE%E4%B9%B1%E7%A0%81/"/>
+    <id>http://yoursite.com/2016/08/19/sonar检测java项目乱码/</id>
+    <published>2016-08-19T09:31:52.000Z</published>
+    <updated>2016-08-19T12:35:16.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>sonar扫描java项目时中文会出现乱码,需要在pom文件里properties添加如下配置<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 文件拷贝时的编码 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">project.build.sourceEncoding</span>&gt;</span>UTF-8<span class="tag">&lt;/<span class="name">project.build.sourceEncoding</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">project.reporting.outputEncoding</span>&gt;</span>UTF-8<span class="tag">&lt;/<span class="name">project.reporting.outputEncoding</span>&gt;</span></div><div class="line"><span class="comment">&lt;!-- 编译时的编码 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">maven.compiler.encoding</span>&gt;</span>UTF-8<span class="tag">&lt;/<span class="name">maven.compiler.encoding</span>&gt;</span></div></pre></td></tr></table></figure></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;sonar扫描java项目时中文会出现乱码,需要在pom文件里properties添加如下配置&lt;br&gt;&lt;figure class=&quot;highlight xml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/
+    
+    </summary>
+    
+      <category term="sonar" scheme="http://yoursite.com/categories/sonar/"/>
+    
+    
+      <category term="java" scheme="http://yoursite.com/tags/java/"/>
+    
+      <category term="sonar" scheme="http://yoursite.com/tags/sonar/"/>
+    
+  </entry>
+  
+</feed>
