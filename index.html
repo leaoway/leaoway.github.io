@@ -297,7 +297,7 @@
         
           
             <p>Eclipse + Weblogic的debug设置<br>在eclipse里面设置debug-&gt;Remote Java Application -&gt; Project: yourproject-&gt;Connection type: Standard-&gt;Host:localhost-&gt;port:8787(可以自己定义,不要与其它端口冲突就行了)</p>
-<p>在staticWeblogic.cmd中加入下面的设置:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">set DEBUG_OPTS=-Xdebug -Xrunjdwp:transport=dt_socket,address=8787,server=y,suspend=n</div><div class="line">%JAVA_HOME%\bin\java %JAVA_VM% %MEM_ARGS% %JAVA_OPTIONS% %DEBUG_OPTS% -Dweblogic.Name=%SERVER_NAME% -Dweblogic.ProductionModeEnabled=%PRODUCTION_MODE% -Djava.security.policy=&quot;%WL_HOME%\server\lib\weblogic.policy&quot; weblogic.Server</div></pre></td></tr></table></figure></p>
+<p>在staticWeblogic.cmd中加入下面的设置:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">set DEBUG_OPTS=-Xdebug -Xrunjdwp:transport=dt_socket,address=<span class="number">8787</span>,server=y,suspend=n</div><div class="line">%JAVA_HOME%\bin\java %JAVA_VM% %MEM_ARGS% %JAVA_OPTIONS% %DEBUG_OPTS% -Dweblogic.Name=%SERVER_NAME% -Dweblogic.ProductionModeEnabled=%PRODUCTION_MODE% -Djava.security.policy=<span class="string">"%WL_HOME%\server\lib\weblogic.policy"</span> weblogic.Server</div></pre></td></tr></table></figure></p>
 <p>配置不要只写在echo里</p>
 
           
