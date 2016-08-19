@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="eclipse,远程,debug,weblogic," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -84,16 +84,13 @@
 
 
 
-<meta name="description" content="Eclipse + Weblogic的远程debug设置在eclipse里面设置debug-&amp;gt;Remote Java Application -&amp;gt; Project: yourproject-&amp;gt;Connection type: Standard-&amp;gt;Host:localhost-&amp;gt;port:8787(可以自己定义,不要与其它端口冲突就行了)">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Eclipse+Weblogic的远程debug设置">
-<meta property="og:url" content="http://yoursite.com/2016/08/19/Eclipse在Weblogic的远程debug设置/index.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="伟">
+<meta property="og:url" content="http://yoursite.com/404.html">
 <meta property="og:site_name" content="伟">
-<meta property="og:description" content="Eclipse + Weblogic的远程debug设置在eclipse里面设置debug-&amp;gt;Remote Java Application -&amp;gt; Project: yourproject-&amp;gt;Connection type: Standard-&amp;gt;Host:localhost-&amp;gt;port:8787(可以自己定义,不要与其它端口冲突就行了)">
-<meta property="og:updated_time" content="2016-08-19T14:01:36.000Z">
+<meta property="og:updated_time" content="2016-08-19T23:05:16.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Eclipse+Weblogic的远程debug设置">
-<meta name="twitter:description" content="Eclipse + Weblogic的远程debug设置在eclipse里面设置debug-&amp;gt;Remote Java Application -&amp;gt; Project: yourproject-&amp;gt;Connection type: Standard-&amp;gt;Host:localhost-&amp;gt;port:8787(可以自己定义,不要与其它端口冲突就行了)">
+<meta name="twitter:title" content="伟">
 
 
 
@@ -114,9 +111,15 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/08/19/Eclipse在Weblogic的远程debug设置/"/>
+  <link rel="canonical" href="http://yoursite.com/404.html"/>
 
-  <title> Eclipse+Weblogic的远程debug设置 | 伟 </title>
+  <title>
+  
+
+  
+     | 伟
+  
+</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -137,7 +140,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left page-post-detail ">
+  <div class="container one-collumn sidebar-position-left  ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -227,160 +230,24 @@
 
   <div id="posts" class="posts-expand">
     
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
     
-      <header class="post-header">
+      <!DOCTYPE HTML>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8;">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="robots" content="all">
+  <meta name="robots" content="index,follow">
+</head>
+<body>
 
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                Eclipse+Weblogic的远程debug设置
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-08-19T21:22:17+08:00" content="2016-08-19">
-              2016-08-19
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/08/19/Eclipse在Weblogic的远程debug设置/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/19/Eclipse在Weblogic的远程debug设置/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        <p>Eclipse + Weblogic的远程debug设置<br>在eclipse里面设置debug-&gt;Remote Java Application -&gt; Project: yourproject-&gt;Connection type: Standard-&gt;Host:localhost-&gt;port:8787(可以自己定义,不要与其它端口冲突就行了)<br><a id="more"></a></p>
-<p>在staticWeblogic.cmd中加入下面的设置:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">set DEBUG_OPTS=-Xdebug -Xrunjdwp:transport=dt_socket,address=8787,server=y,suspend=n</div><div class="line">%JAVA_HOME%\bin\java %JAVA_VM% %MEM_ARGS% %JAVA_OPTIONS% %DEBUG_OPTS% -Dweblogic.Name=%SERVER_NAME% -Dweblogic.ProductionModeEnabled=%PRODUCTION_MODE% -Djava.security.policy=&quot;%WL_HOME%\server\lib\weblogic.policy&quot; weblogic.Server</div></pre></td></tr></table></figure></p>
-<p>配置不要只写在echo里</p>
-
-      
-    </div>
-
-    <div>
-      
-        
-
-      
-    </div>
-
-    <div>
-      
-        
-  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
-    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
-    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
-      <span>赏</span>
-    </button>
-    <div id="QR" style="display: none;">
-      
-      
-        <div id="alipay" style="display: inline-block">
-          <img id="alipay_qr" src="/uploads/alipay.jpg" alt="tanjianwei Alipay"/>
-          <p>支付宝打赏</p>
-        </div>
-      
-    </div>
-  </div>
-
-
-      
-    </div>
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/eclipse/" rel="tag">#eclipse</a>
-          
-            <a href="/tags/远程/" rel="tag">#远程</a>
-          
-            <a href="/tags/debug/" rel="tag">#debug</a>
-          
-            <a href="/tags/weblogic/" rel="tag">#weblogic</a>
-          
-        </div>
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2016/08/19/informix数据库迁移/" rel="next" title="informix数据库迁移">
-                <i class="fa fa-chevron-left"></i> informix数据库迁移
-              </a>
-            
-          </div>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/08/19/gitolite注意事项/" rel="prev" title="gitolite注意事项">
-                gitolite注意事项 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </article>
-
-
-
-    <div class="post-spread">
-      
-        
-<script>
-  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+<script type="text/javascript" src="http://www.qq.com/404/search_children.js" charset="utf-8" homepageurl="your site url " homepagename="回到我的主页">
 </script>
 
-      
-    </div>
+</body>
+</html>
+
+    
   </div>
 
 
@@ -391,8 +258,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/08/19/Eclipse在Weblogic的远程debug设置/"
-           data-title="Eclipse+Weblogic的远程debug设置" data-url="http://yoursite.com/2016/08/19/Eclipse在Weblogic的远程debug设置/">
+      <div class="ds-thread" data-thread-key="404.html"
+           data-title="" data-url="http://yoursite.com/404.html">
       </div>
     
   </div>
@@ -416,17 +283,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel ">
+      <section class="site-overview sidebar-panel  sidebar-panel-active ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/head.jpg"
@@ -487,17 +345,6 @@
 
       </section>
 
-      
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-            
-              
-            
-            
-              <p class="post-toc-empty">此文章未包含目录</p>
-            
-          </div>
-        </section>
       
 
     </div>
@@ -601,10 +448,6 @@
 
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
-
-
 
   
 
