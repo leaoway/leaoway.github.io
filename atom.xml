@@ -95,7 +95,7 @@
     <link href="http://yoursite.com/2016/08/19/informix%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%81%E7%A7%BB/"/>
     <id>http://yoursite.com/2016/08/19/informix数据库迁移/</id>
     <published>2016-08-19T10:20:02.000Z</published>
-    <updated>2016-08-19T13:44:13.000Z</updated>
+    <updated>2016-08-19T23:15:14.000Z</updated>
     
     <content type="html"><![CDATA[<ol>
 <li>导出数据库 dbexport 库名</li>
