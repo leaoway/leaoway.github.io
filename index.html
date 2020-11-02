@@ -150,6 +150,137 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/11/02/springboot%E5%A4%96%E9%83%A8tomcat%E9%83%A8%E7%BD%B2%E9%85%8D%E7%BD%AE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/head.jpg">
+      <meta itemprop="name" content="leaoway">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tan">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/11/02/springboot%E5%A4%96%E9%83%A8tomcat%E9%83%A8%E7%BD%B2%E9%85%8D%E7%BD%AE/" class="post-title-link" itemprop="url">springboot外部tomcat部署配置</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-11-02 16:14:43 / 修改时间：16:25:24" itemprop="dateCreated datePublished" datetime="2020-11-02T16:14:43+08:00">2020-11-02</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>1.pom增加配置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.springframework.boot&lt;&#x2F;groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-boot-starter-tomcat&lt;&#x2F;artifactId&gt;</span><br><span class="line">    &lt;scope&gt;provided&lt;&#x2F;scope&gt;</span><br><span class="line">&lt;&#x2F;dependency&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.apache.tomcat&lt;&#x2F;groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;tomcat-servlet-api&lt;&#x2F;artifactId&gt;</span><br><span class="line">    &lt;scope&gt;provided&lt;&#x2F;scope&gt;</span><br><span class="line">&lt;&#x2F;dependency&gt;</span><br></pre></td></tr></table></figure>
+<p>2.pom打包方式由jar改为war</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;packaging&gt;war&lt;&#x2F;packaging&gt;</span><br></pre></td></tr></table></figure>
+<p>3.Application类继承SpringBootServletInitializer，重新配置，类似于web.xml</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">protected</span> SpringApplicationBuilder <span class="title">configure</span><span class="params">(SpringApplicationBuilder application)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> application.sources(Application.class);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/11/02/oracle-mybatis-java-sql-SQLException-%E6%B5%81%E5%B7%B2%E8%A2%AB%E5%85%B3%E9%97%AD%E9%97%AE%E9%A2%98/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/head.jpg">
+      <meta itemprop="name" content="leaoway">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tan">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/11/02/oracle-mybatis-java-sql-SQLException-%E6%B5%81%E5%B7%B2%E8%A2%AB%E5%85%B3%E9%97%AD%E9%97%AE%E9%A2%98/" class="post-title-link" itemprop="url">oracle mybatis java.sql.SQLException: 流已被关闭问题</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-11-02 15:59:29 / 修改时间：16:21:46" itemprop="dateCreated datePublished" datetime="2020-11-02T15:59:29+08:00">2020-11-02</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>oracle 表字段类型为LONG RAW时，mysql生成BaseResultMap时，必须按照表字段顺序生成，不然会报java.sql.SQLException: 流已被关闭问题的异常</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;result column=<span class="string">&quot;IMAGE&quot;</span> jdbcType=<span class="string">&quot;LONGVARBINARY&quot;</span> property=<span class="string">&quot;image&quot;</span> typeHandler=<span class="string">&quot;com.leaoway.handler.LongVarBinaryHandler&quot;</span>/&gt;</span><br><span class="line">&lt;result column=<span class="string">&quot;STATUS&quot;</span> jdbcType=<span class="string">&quot;VARCHAR&quot;</span> property=<span class="string">&quot;status&quot;</span> /&gt;</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/11/02/oracle-mybatis-java-sql-SQLException-%E6%B5%81%E5%B7%B2%E8%A2%AB%E5%85%B3%E9%97%AD%E9%97%AE%E9%A2%98/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2020/11/02/%E8%B5%84%E6%BA%90%E8%87%AA%E5%8A%A8%E5%85%B3%E9%97%AD%E6%8E%A5%E5%8F%A3AutoCloseable/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -175,7 +306,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-11-02 11:24:46 / 修改时间：14:29:26" itemprop="dateCreated datePublished" datetime="2020-11-02T11:24:46+08:00">2020-11-02</time>
+              <time title="创建时间：2020-11-02 11:24:46 / 修改时间：15:56:55" itemprop="dateCreated datePublished" datetime="2020-11-02T11:24:46+08:00">2020-11-02</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -198,9 +329,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>jdk1.7引入了资源自动关闭的接口AutoCloseable。一些资源也实现了该接口，如preparedStatement、Connection、InputStream、outputStream等等资源接口。在使用的时候只需要把资源在try块中用小括号括起来就可以了。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">String sql = <span class="string">&quot;select 1 from dual&quot;</span>;</span><br><span class="line"><span class="keyword">try</span> (PreparedStatement pstmt = toConn.prepareStatement(sql);</span><br><span class="line">    ResultSet rs = pstmt.executeQuery();) &#123;</span><br><span class="line">    <span class="keyword">if</span> (rs.next()) &#123;</span><br><span class="line">    &#125;</span><br><span class="line">&#125; <span class="keyword">catch</span> (SQLException e) &#123;</span><br><span class="line">    log.error(<span class="string">&quot;查询出错&quot;</span>, e);</span><br><span class="line">    e.printStackTrace();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+          <p>  jdk1.7引入了资源自动关闭的接口AutoCloseable。一些资源也实现了该接口，如preparedStatement、Connection、InputStream、outputStream等等资源接口。在使用的时候只需要把资源在try块中用小括号括起来就可以了。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/11/02/%E8%B5%84%E6%BA%90%E8%87%AA%E5%8A%A8%E5%85%B3%E9%97%AD%E6%8E%A5%E5%8F%A3AutoCloseable/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -283,7 +420,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">1</span>
+          <span class="site-state-item-count">3</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -294,7 +431,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">6</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

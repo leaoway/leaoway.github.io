@@ -20,20 +20,22 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="jdk1.7引入了资源自动关闭的接口AutoCloseable。一些资源也实现了该接口，如preparedStatement、Connection、InputStream、outputStream等等资源接口。在使用的时候只需要把资源在try块中用小括号括起来就可以了。">
+  <meta name="description" content="oracle 表字段类型为LONG RAW时，mysql生成BaseResultMap时，必须按照表字段顺序生成，不然会报java.sql.SQLException: 流已被关闭问题的异常 12&lt;result column&#x3D;&quot;IMAGE&quot; jdbcType&#x3D;&quot;LONGVARBINARY&quot; property&#x3D;&quot;image&quot; typeH">
 <meta property="og:type" content="article">
-<meta property="og:title" content="资源自动关闭接口AutoCloseable">
-<meta property="og:url" content="http://example.com/2020/11/02/%E8%B5%84%E6%BA%90%E8%87%AA%E5%8A%A8%E5%85%B3%E9%97%AD%E6%8E%A5%E5%8F%A3AutoCloseable/index.html">
+<meta property="og:title" content="oracle mybatis java.sql.SQLException: 流已被关闭问题">
+<meta property="og:url" content="http://example.com/2020/11/02/oracle-mybatis-java-sql-SQLException-%E6%B5%81%E5%B7%B2%E8%A2%AB%E5%85%B3%E9%97%AD%E9%97%AE%E9%A2%98/index.html">
 <meta property="og:site_name" content="Tan">
-<meta property="og:description" content="jdk1.7引入了资源自动关闭的接口AutoCloseable。一些资源也实现了该接口，如preparedStatement、Connection、InputStream、outputStream等等资源接口。在使用的时候只需要把资源在try块中用小括号括起来就可以了。">
+<meta property="og:description" content="oracle 表字段类型为LONG RAW时，mysql生成BaseResultMap时，必须按照表字段顺序生成，不然会报java.sql.SQLException: 流已被关闭问题的异常 12&lt;result column&#x3D;&quot;IMAGE&quot; jdbcType&#x3D;&quot;LONGVARBINARY&quot; property&#x3D;&quot;image&quot; typeH">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-11-02T03:24:46.000Z">
-<meta property="article:modified_time" content="2020-11-02T07:56:55.177Z">
+<meta property="article:published_time" content="2020-11-02T07:59:29.000Z">
+<meta property="article:modified_time" content="2020-11-02T08:21:46.629Z">
 <meta property="article:author" content="leaoway">
-<meta property="article:tag" content="java">
+<meta property="article:tag" content="oracle">
+<meta property="article:tag" content="mybatis">
+<meta property="article:tag" content="SQLException">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/2020/11/02/%E8%B5%84%E6%BA%90%E8%87%AA%E5%8A%A8%E5%85%B3%E9%97%AD%E6%8E%A5%E5%8F%A3AutoCloseable/">
+<link rel="canonical" href="http://example.com/2020/11/02/oracle-mybatis-java-sql-SQLException-%E6%B5%81%E5%B7%B2%E8%A2%AB%E5%85%B3%E9%97%AD%E9%97%AE%E9%A2%98/">
 
 
 <script id="page-configurations">
@@ -46,7 +48,7 @@
   };
 </script>
 
-  <title>资源自动关闭接口AutoCloseable | Tan</title>
+  <title>oracle mybatis java.sql.SQLException: 流已被关闭问题 | Tan</title>
   
 
 
@@ -156,7 +158,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/11/02/%E8%B5%84%E6%BA%90%E8%87%AA%E5%8A%A8%E5%85%B3%E9%97%AD%E6%8E%A5%E5%8F%A3AutoCloseable/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/11/02/oracle-mybatis-java-sql-SQLException-%E6%B5%81%E5%B7%B2%E8%A2%AB%E5%85%B3%E9%97%AD%E9%97%AE%E9%A2%98/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/head.jpg">
@@ -169,7 +171,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          资源自动关闭接口AutoCloseable
+          oracle mybatis java.sql.SQLException: 流已被关闭问题
         </h1>
 
         <div class="post-meta">
@@ -180,16 +182,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-11-02 11:24:46 / 修改时间：15:56:55" itemprop="dateCreated datePublished" datetime="2020-11-02T11:24:46+08:00">2020-11-02</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/AutoCloseable/" itemprop="url" rel="index"><span itemprop="name">AutoCloseable</span></a>
-                </span>
+              <time title="创建时间：2020-11-02 15:59:29 / 修改时间：16:21:46" itemprop="dateCreated datePublished" datetime="2020-11-02T15:59:29+08:00">2020-11-02</time>
             </span>
 
           
@@ -203,9 +196,11 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>  jdk1.7引入了资源自动关闭的接口AutoCloseable。一些资源也实现了该接口，如preparedStatement、Connection、InputStream、outputStream等等资源接口。在使用的时候只需要把资源在try块中用小括号括起来就可以了。</p>
+        <p>oracle 表字段类型为LONG RAW时，mysql生成BaseResultMap时，必须按照表字段顺序生成，不然会报java.sql.SQLException: 流已被关闭问题的异常</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;result column=<span class="string">&quot;IMAGE&quot;</span> jdbcType=<span class="string">&quot;LONGVARBINARY&quot;</span> property=<span class="string">&quot;image&quot;</span> typeHandler=<span class="string">&quot;com.leaoway.handler.LongVarBinaryHandler&quot;</span>/&gt;</span><br><span class="line">&lt;result column=<span class="string">&quot;STATUS&quot;</span> jdbcType=<span class="string">&quot;VARCHAR&quot;</span> property=<span class="string">&quot;status&quot;</span> /&gt;</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">String sql = <span class="string">&quot;select 1 from dual&quot;</span>;</span><br><span class="line"><span class="keyword">try</span> (PreparedStatement pstmt = toConn.prepareStatement(sql);</span><br><span class="line">    ResultSet rs = pstmt.executeQuery();) &#123;</span><br><span class="line">    <span class="keyword">if</span> (rs.next()) &#123;</span><br><span class="line">    &#125;</span><br><span class="line">&#125; <span class="keyword">catch</span> (SQLException e) &#123;</span><br><span class="line">    log.error(<span class="string">&quot;查询出错&quot;</span>, e);</span><br><span class="line">    e.printStackTrace();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>而且，需要新增一个typeHandler</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">public class LongVarBinaryHandler implements TypeHandler&lt;byte[]&gt; &#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">LongVarBinaryHandler</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setParameter</span><span class="params">(PreparedStatement preparedStatement, <span class="keyword">int</span> i, <span class="keyword">byte</span>[] bytes, JdbcType jdbcType)</span></span></span><br><span class="line"><span class="function">            <span class="keyword">throws</span> SQLException </span>&#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">byte</span>[] getResult(ResultSet resultSet, String s) <span class="keyword">throws</span> SQLException &#123;</span><br><span class="line">        <span class="keyword">byte</span>[] result = resultSet.getBytes(s);</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">byte</span>[] getResult(ResultSet resultSet, <span class="keyword">int</span> i) <span class="keyword">throws</span> SQLException &#123;</span><br><span class="line">        <span class="keyword">byte</span>[] result = resultSet.getBytes(i);</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">byte</span>[] getResult(CallableStatement callableStatement, <span class="keyword">int</span> i) <span class="keyword">throws</span> SQLException &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">byte</span>[ <span class="number">0</span> ];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -230,7 +225,9 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/java/" rel="tag"># java</a>
+              <a href="/tags/oracle/" rel="tag"># oracle</a>
+              <a href="/tags/mybatis/" rel="tag"># mybatis</a>
+              <a href="/tags/SQLException/" rel="tag"># SQLException</a>
           </div>
 
         
@@ -238,10 +235,13 @@
 
         
     <div class="post-nav">
-      <div class="post-nav-item"></div>
       <div class="post-nav-item">
-    <a href="/2020/11/02/oracle-mybatis-java-sql-SQLException-%E6%B5%81%E5%B7%B2%E8%A2%AB%E5%85%B3%E9%97%AD%E9%97%AE%E9%A2%98/" rel="next" title="oracle mybatis java.sql.SQLException: 流已被关闭问题">
-      oracle mybatis java.sql.SQLException: 流已被关闭问题 <i class="fa fa-chevron-right"></i>
+    <a href="/2020/11/02/%E8%B5%84%E6%BA%90%E8%87%AA%E5%8A%A8%E5%85%B3%E9%97%AD%E6%8E%A5%E5%8F%A3AutoCloseable/" rel="prev" title="资源自动关闭接口AutoCloseable">
+      <i class="fa fa-chevron-left"></i> 资源自动关闭接口AutoCloseable
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/11/02/springboot%E5%A4%96%E9%83%A8tomcat%E9%83%A8%E7%BD%B2%E9%85%8D%E7%BD%AE/" rel="next" title="springboot外部tomcat部署配置">
+      springboot外部tomcat部署配置 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
