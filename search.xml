@@ -54,6 +54,18 @@
       </tags>
   </entry>
   <entry>
+    <title>springboot scheduled cron配置化</title>
+    <url>/2020/11/03/springboot-scheduled-cron%E9%85%8D%E7%BD%AE%E5%8C%96/</url>
+    <content><![CDATA[<p>需要在类上增加注解PropertySource</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="meta">@PropertySource(&quot;classpath:application-config.yml&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SearchTask</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Scheduled(cron = &quot;$&#123;cron&#125;&quot;)</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">importDbToEs</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;test cron time&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>scheduled</tag>
+        <tag>cron</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>springboot外部tomcat部署配置</title>
     <url>/2020/11/02/springboot%E5%A4%96%E9%83%A8tomcat%E9%83%A8%E7%BD%B2%E9%85%8D%E7%BD%AE/</url>
     <content><![CDATA[<p>1.pom增加配置</p>
@@ -67,18 +79,6 @@
       <tags>
         <tag>springboot</tag>
         <tag>tomcat</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>springboot scheduled cron配置化</title>
-    <url>/2020/11/03/springboot-scheduled-cron%E9%85%8D%E7%BD%AE%E5%8C%96/</url>
-    <content><![CDATA[<p>需要在类上增加注解PropertySource</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="meta">@PropertySource(&quot;classpath:application-config.yml&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SearchTask</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Scheduled(cron = &quot;$&#123;cron&#125;&quot;)</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">importDbToEs</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;test cron time&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <tags>
-        <tag>scheduled</tag>
-        <tag>cron</tag>
       </tags>
   </entry>
   <entry>
