@@ -123,20 +123,6 @@
       </tags>
   </entry>
   <entry>
-    <title>资源自动关闭接口AutoCloseable</title>
-    <url>/2020/11/02/%E8%B5%84%E6%BA%90%E8%87%AA%E5%8A%A8%E5%85%B3%E9%97%AD%E6%8E%A5%E5%8F%A3AutoCloseable/</url>
-    <content><![CDATA[<p>  jdk1.7引入了资源自动关闭的接口AutoCloseable。一些资源也实现了该接口，如preparedStatement、Connection、InputStream、outputStream等等资源接口。在使用的时候只需要把资源在try块中用小括号括起来就可以了。</p>
-<a id="more"></a>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">String sql = <span class="string">&quot;select 1 from dual&quot;</span>;</span><br><span class="line"><span class="keyword">try</span> (PreparedStatement pstmt = toConn.prepareStatement(sql);</span><br><span class="line">    ResultSet rs = pstmt.executeQuery();) &#123;</span><br><span class="line">    <span class="keyword">if</span> (rs.next()) &#123;</span><br><span class="line">    &#125;</span><br><span class="line">&#125; <span class="keyword">catch</span> (SQLException e) &#123;</span><br><span class="line">    log.error(<span class="string">&quot;查询出错&quot;</span>, e);</span><br><span class="line">    e.printStackTrace();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>AutoCloseable</category>
-      </categories>
-      <tags>
-        <tag>java</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>spring通过注解自定义参数解析器获取公共信息</title>
     <url>/2020/11/03/spring%E9%80%9A%E8%BF%87%E6%B3%A8%E8%A7%A3%E8%8E%B7%E5%8F%96%E5%85%AC%E5%85%B1%E4%BF%A1%E6%81%AF/</url>
     <content><![CDATA[<p>好多时候调用接口都需要一些公共的信息，例如用户信息，每次都需要在controller去调用查询，还有好多通过继承一个BaseController来获取，但是那样设计是不是比较重，这里可以通过自定义参数解析器的方式去获取。</p>
@@ -163,6 +149,20 @@
       <tags>
         <tag>spring</tag>
         <tag>参数解析器</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>资源自动关闭接口AutoCloseable</title>
+    <url>/2020/11/02/%E8%B5%84%E6%BA%90%E8%87%AA%E5%8A%A8%E5%85%B3%E9%97%AD%E6%8E%A5%E5%8F%A3AutoCloseable/</url>
+    <content><![CDATA[<p>  jdk1.7引入了资源自动关闭的接口AutoCloseable。一些资源也实现了该接口，如preparedStatement、Connection、InputStream、outputStream等等资源接口。在使用的时候只需要把资源在try块中用小括号括起来就可以了。</p>
+<a id="more"></a>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">String sql = <span class="string">&quot;select 1 from dual&quot;</span>;</span><br><span class="line"><span class="keyword">try</span> (PreparedStatement pstmt = toConn.prepareStatement(sql);</span><br><span class="line">    ResultSet rs = pstmt.executeQuery();) &#123;</span><br><span class="line">    <span class="keyword">if</span> (rs.next()) &#123;</span><br><span class="line">    &#125;</span><br><span class="line">&#125; <span class="keyword">catch</span> (SQLException e) &#123;</span><br><span class="line">    log.error(<span class="string">&quot;查询出错&quot;</span>, e);</span><br><span class="line">    e.printStackTrace();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>AutoCloseable</category>
+      </categories>
+      <tags>
+        <tag>java</tag>
       </tags>
   </entry>
 </search>
