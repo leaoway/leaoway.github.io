@@ -86,6 +86,21 @@
       </tags>
   </entry>
   <entry>
+    <title>oracle mybatis java.sql.SQLException: 流已被关闭问题</title>
+    <url>/2020/11/02/oracle-mybatis-java-sql-SQLException-%E6%B5%81%E5%B7%B2%E8%A2%AB%E5%85%B3%E9%97%AD%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<p>oracle 表字段类型为LONG RAW时，mysql生成BaseResultMap时，必须按照表字段顺序生成，不然会报java.sql.SQLException: 流已被关闭问题的异常</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">&lt;result column=<span class="string">&quot;IMAGE&quot;</span> jdbcType=<span class="string">&quot;LONGVARBINARY&quot;</span> property=<span class="string">&quot;image&quot;</span> typeHandler=<span class="string">&quot;com.leaoway.handler.LongVarBinaryHandler&quot;</span>/&gt;</span><br><span class="line">&lt;result column=<span class="string">&quot;STATUS&quot;</span> jdbcType=<span class="string">&quot;VARCHAR&quot;</span> property=<span class="string">&quot;status&quot;</span> /&gt;</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>而且，需要新增一个typeHandler</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">public class LongVarBinaryHandler implements TypeHandler&lt;byte[]&gt; &#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">LongVarBinaryHandler</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setParameter</span><span class="params">(PreparedStatement preparedStatement, <span class="keyword">int</span> i, <span class="keyword">byte</span>[] bytes, JdbcType jdbcType)</span></span></span><br><span class="line"><span class="function">            <span class="keyword">throws</span> SQLException </span>&#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">byte</span>[] getResult(ResultSet resultSet, String s) <span class="keyword">throws</span> SQLException &#123;</span><br><span class="line">        <span class="keyword">byte</span>[] result = resultSet.getBytes(s);</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">byte</span>[] getResult(ResultSet resultSet, <span class="keyword">int</span> i) <span class="keyword">throws</span> SQLException &#123;</span><br><span class="line">        <span class="keyword">byte</span>[] result = resultSet.getBytes(i);</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">byte</span>[] getResult(CallableStatement callableStatement, <span class="keyword">int</span> i) <span class="keyword">throws</span> SQLException &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">byte</span>[ <span class="number">0</span> ];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>oracle</tag>
+        <tag>mybatis</tag>
+        <tag>SQLException</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>springboot elasticsearch集成</title>
     <url>/2020/11/03/springboot-elasticsearch%E9%9B%86%E6%88%90/</url>
     <content><![CDATA[<p>1.首先引入依赖包</p>
@@ -112,21 +127,6 @@
       <tags>
         <tag>elasticsearch</tag>
         <tag>springboot</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>oracle mybatis java.sql.SQLException: 流已被关闭问题</title>
-    <url>/2020/11/02/oracle-mybatis-java-sql-SQLException-%E6%B5%81%E5%B7%B2%E8%A2%AB%E5%85%B3%E9%97%AD%E9%97%AE%E9%A2%98/</url>
-    <content><![CDATA[<p>oracle 表字段类型为LONG RAW时，mysql生成BaseResultMap时，必须按照表字段顺序生成，不然会报java.sql.SQLException: 流已被关闭问题的异常</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">&lt;result column=<span class="string">&quot;IMAGE&quot;</span> jdbcType=<span class="string">&quot;LONGVARBINARY&quot;</span> property=<span class="string">&quot;image&quot;</span> typeHandler=<span class="string">&quot;com.leaoway.handler.LongVarBinaryHandler&quot;</span>/&gt;</span><br><span class="line">&lt;result column=<span class="string">&quot;STATUS&quot;</span> jdbcType=<span class="string">&quot;VARCHAR&quot;</span> property=<span class="string">&quot;status&quot;</span> /&gt;</span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-<p>而且，需要新增一个typeHandler</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">public class LongVarBinaryHandler implements TypeHandler&lt;byte[]&gt; &#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">LongVarBinaryHandler</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setParameter</span><span class="params">(PreparedStatement preparedStatement, <span class="keyword">int</span> i, <span class="keyword">byte</span>[] bytes, JdbcType jdbcType)</span></span></span><br><span class="line"><span class="function">            <span class="keyword">throws</span> SQLException </span>&#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">byte</span>[] getResult(ResultSet resultSet, String s) <span class="keyword">throws</span> SQLException &#123;</span><br><span class="line">        <span class="keyword">byte</span>[] result = resultSet.getBytes(s);</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">byte</span>[] getResult(ResultSet resultSet, <span class="keyword">int</span> i) <span class="keyword">throws</span> SQLException &#123;</span><br><span class="line">        <span class="keyword">byte</span>[] result = resultSet.getBytes(i);</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">byte</span>[] getResult(CallableStatement callableStatement, <span class="keyword">int</span> i) <span class="keyword">throws</span> SQLException &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">byte</span>[ <span class="number">0</span> ];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <tags>
-        <tag>oracle</tag>
-        <tag>mybatis</tag>
-        <tag>SQLException</tag>
       </tags>
   </entry>
   <entry>
