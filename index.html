@@ -195,6 +195,66 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/08/06/git%E6%9B%B4%E6%96%B0%E6%89%80%E6%9C%89%E4%BB%93%E5%BA%93%E8%84%9A%E6%9C%AC/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/head.jpg">
+      <meta itemprop="name" content="leaoway">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tan">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/08/06/git%E6%9B%B4%E6%96%B0%E6%89%80%E6%9C%89%E4%BB%93%E5%BA%93%E8%84%9A%E6%9C%AC/" class="post-title-link" itemprop="url">git更新所有仓库脚本</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-08-06 10:27:38 / 修改时间：10:30:28" itemprop="dateCreated datePublished" datetime="2021-08-06T10:27:38+08:00">2021-08-06</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!/bin/bash</span></span><br><span class="line"></span><br><span class="line">function showGreen()&#123; </span><br><span class="line">    echo -e &quot;\033[32m $1 \033[0m&quot;</span><br><span class="line">&#125;</span><br><span class="line">function showBlue()&#123; </span><br><span class="line">    echo -e &quot;\033[36m $1 \033[0m&quot;</span><br><span class="line">&#125;</span><br><span class="line">function showYellow()&#123; </span><br><span class="line">    echo -e &quot;\033[33m $1 \033[0m&quot;</span><br><span class="line">&#125;</span><br><span class="line">function showWhite()&#123;</span><br><span class="line">    echo -e &quot;\033[37m $1 \033[0m&quot;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function traversal_dir()&#123;</span><br><span class="line">    for sub_dir in `ls $1` #通过 ls root_dir 遍历出子目录，装入子目录 sub_dir 中</span><br><span class="line">    do</span><br><span class="line">        dir=$1&quot;/&quot;$sub_dir #将根目录 $1 与子目录 sub_dir 拼接成完整的目录</span><br><span class="line">        if [ -d $dir ] #判断：是目录的继续下一步</span><br><span class="line">        then</span><br><span class="line">            cd $dir</span><br><span class="line">			showBlue $dir</span><br><span class="line">            showGreen &#x27;git pull &#x27;$sub_dir</span><br><span class="line">            git pull</span><br><span class="line">			echo #打印空行</span><br><span class="line">        else</span><br><span class="line">            showYellow $dir</span><br><span class="line">			echo #打印空行</span><br><span class="line">        fi  </span><br><span class="line">    done</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">root_dir=&quot;/root_dir&quot; #定义根目录，即项目 project 的上级目录。例如：root_dir/project/.git </span><br><span class="line">traversal_dir $root_dir</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2020/12/02/elasticsearch-%E5%9F%BA%E7%A1%80/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -887,89 +947,11 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/11/02/%E8%B5%84%E6%BA%90%E8%87%AA%E5%8A%A8%E5%85%B3%E9%97%AD%E6%8E%A5%E5%8F%A3AutoCloseable/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/head.jpg">
-      <meta itemprop="name" content="leaoway">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Tan">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/11/02/%E8%B5%84%E6%BA%90%E8%87%AA%E5%8A%A8%E5%85%B3%E9%97%AD%E6%8E%A5%E5%8F%A3AutoCloseable/" class="post-title-link" itemprop="url">资源自动关闭接口AutoCloseable</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-11-02 11:24:46" itemprop="dateCreated datePublished" datetime="2020-11-02T11:24:46+08:00">2020-11-02</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-11-27 10:01:28" itemprop="dateModified" datetime="2020-11-27T10:01:28+08:00">2020-11-27</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/AutoCloseable/" itemprop="url" rel="index"><span itemprop="name">AutoCloseable</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>  jdk1.7引入了资源自动关闭的接口AutoCloseable。一些资源也实现了该接口，如preparedStatement、Connection、InputStream、outputStream等等资源接口。在使用的时候只需要把资源在try块中用小括号括起来就可以了。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/11/02/%E8%B5%84%E6%BA%90%E8%87%AA%E5%8A%A8%E5%85%B3%E9%97%AD%E6%8E%A5%E5%8F%A3AutoCloseable/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+  </nav>
 
 
 
@@ -1036,7 +1018,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">10</span>
+          <span class="site-state-item-count">11</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1080,7 +1062,7 @@
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2020</span>
+  <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

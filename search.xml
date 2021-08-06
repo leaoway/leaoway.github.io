@@ -306,4 +306,11 @@
         <tag>java</tag>
       </tags>
   </entry>
+  <entry>
+    <title>git更新所有仓库脚本</title>
+    <url>/2021/08/06/git%E6%9B%B4%E6%96%B0%E6%89%80%E6%9C%89%E4%BB%93%E5%BA%93%E8%84%9A%E6%9C%AC/</url>
+    <content><![CDATA[<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!/bin/bash</span></span><br><span class="line"></span><br><span class="line">function showGreen()&#123; </span><br><span class="line">    echo -e &quot;\033[32m $1 \033[0m&quot;</span><br><span class="line">&#125;</span><br><span class="line">function showBlue()&#123; </span><br><span class="line">    echo -e &quot;\033[36m $1 \033[0m&quot;</span><br><span class="line">&#125;</span><br><span class="line">function showYellow()&#123; </span><br><span class="line">    echo -e &quot;\033[33m $1 \033[0m&quot;</span><br><span class="line">&#125;</span><br><span class="line">function showWhite()&#123;</span><br><span class="line">    echo -e &quot;\033[37m $1 \033[0m&quot;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function traversal_dir()&#123;</span><br><span class="line">    for sub_dir in `ls $1` #通过 ls root_dir 遍历出子目录，装入子目录 sub_dir 中</span><br><span class="line">    do</span><br><span class="line">        dir=$1&quot;/&quot;$sub_dir #将根目录 $1 与子目录 sub_dir 拼接成完整的目录</span><br><span class="line">        if [ -d $dir ] #判断：是目录的继续下一步</span><br><span class="line">        then</span><br><span class="line">            cd $dir</span><br><span class="line">			showBlue $dir</span><br><span class="line">            showGreen &#x27;git pull &#x27;$sub_dir</span><br><span class="line">            git pull</span><br><span class="line">			echo #打印空行</span><br><span class="line">        else</span><br><span class="line">            showYellow $dir</span><br><span class="line">			echo #打印空行</span><br><span class="line">        fi  </span><br><span class="line">    done</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">root_dir=&quot;/root_dir&quot; #定义根目录，即项目 project 的上级目录。例如：root_dir/project/.git </span><br><span class="line">traversal_dir $root_dir</span><br></pre></td></tr></table></figure>
+
+]]></content>
+  </entry>
 </search>
